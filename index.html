@@ -37,23 +37,12 @@
 
     <div class="task-container">
       <ul>
-        <li>
-          <span>task....</span>
-          <i class="fa-solid fa-trash-can"></i>
+        <!-- ciclo v-for per stampare gli oggetti -->
+        <li v-for="(task, indice) in tasks">
+          <!-- se task.done è true si applica la classe barra -->
+          <span :class="task.done ? 'barra' : '' ">{{task.text}}</span>
+          <i @click="remuveOJ(indice)" class="fa-solid fa-trash-can"></i>
         </li>
-        <li>
-          <span>task....</span>
-          <i class="fa-solid fa-trash-can"></i>
-        </li>
-        <li>
-          <span>task....</span>
-          <i class="fa-solid fa-trash-can"></i>
-        </li>
-        <li>
-          <span>task....</span>
-          <i class="fa-solid fa-trash-can"></i>
-        </li>
-
       </ul>
 
     </div>
