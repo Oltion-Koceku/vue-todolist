@@ -16,6 +16,15 @@ createApp({
           text: "Fare 10km di corsa",
           done: false
         }
+      },
+
+      newTask:{
+        text: "",
+        done: false
+      },
+
+      error: {
+        text:""
       }
     }
   },
@@ -24,6 +33,19 @@ createApp({
     remuveOJ(indice){
       if (this.tasks[indice].done) {
         delete this.tasks[indice]
+      }
+    },
+
+    addTask(){
+      Object.assign(this.tasks, this.newTask)
+      console.log(this.tasks);
+    },
+     
+    addBar(indice){
+      if (this.tasks[indice].done) {
+        this.tasks[indice].done = false
+      }else{
+        this.tasks[indice].done = true
       }
     }
   }

@@ -30,17 +30,18 @@
 
     <div class="new-task">
 
-      <input  placeholder="Nuovo task"type="text">
+      <input @keyup.enter="addTask" v-model="newTask.text" placeholder="Nuovo task"type="text">
       <button >Aggiungi</button>
-      <p class="error"></p>
+      <p class="error">{{error.text}}</p>
     </div>
 
     <div class="task-container">
       <ul>
         <!-- ciclo v-for per stampare gli oggetti -->
-        <li v-for="(task, indice) in tasks">
+        <li  v-for="(task, indice) in tasks" @click="addBar(indice)">
           <!-- se task.done è true si applica la classe barra -->
           <span :class="task.done ? 'barra' : '' ">{{task.text}}</span>
+          <!-- funzione con delete che rimuove l'oggetto in base all'indice -->
           <i @click="remuveOJ(indice)" class="fa-solid fa-trash-can"></i>
         </li>
       </ul>
