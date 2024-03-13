@@ -22,10 +22,9 @@ createApp({
 
   methods:{
     remuveOJ(indice){
-      console.log(indice);
-      // if (this.done) {
-        this.tasks.delete(indice, 1)
-      // }
+      if (this.tasks[indice].done) {
+        delete this.tasks[indice]
+      }
     }
   }
 }).mount("#app");
