@@ -31,7 +31,7 @@
     <div class="new-task">
 
       <input @keyup.enter="addTask()" v-model.trim="newTask.text" placeholder="Nuovo task"type="text">
-      <button >Aggiungi</button>
+      <button @click="addTask()">Aggiungi</button>
       <p v-if="isError === true" class="error">{{error.text}}</p>
     </div>
 
