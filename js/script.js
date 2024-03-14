@@ -64,6 +64,7 @@ createApp({
         this.tasks[indice].done = false
       }else{
         this.tasks[indice].done = true
+        this.notRemuve = false
       }
 
       console.log(this.tasks);
